@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>about_event</name>
+    <events>
+        <event-block sid="531417031442068">
+            <conditions>
+                <condition id="17" name="On tap object" sid="914482196454335" type="Touch">
+                    <param id="0" name="Object">Sprite5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="631484495998449" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="231292356995716">
+            <conditions>
+                <condition id="17" name="On tap object" sid="480277962987385" type="Touch">
+                    <param id="0" name="Object">Sprite8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="426549121862825" type="Browser">
+                    <param id="0" name="URL">&quot;https://www.instagram.com/egowinasis/&quot;</param>
+                    <param id="1" name="Tag">&quot;instagram&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="594262090110980">
+            <conditions>
+                <condition id="17" name="On tap object" sid="219343395015724" type="Touch">
+                    <param id="0" name="Object">Sprite9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="208492458514981" type="Browser">
+                    <param id="0" name="URL">&quot;https://web.facebook.com/EgoWinasis/&quot;</param>
+                    <param id="1" name="Tag">&quot;facebook&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="538507836852290">
+            <conditions>
+                <condition id="17" name="On tap object" sid="242264137151005" type="Touch">
+                    <param id="0" name="Object">Sprite10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="671893147197471" type="Browser">
+                    <param id="0" name="URL">&quot;https://www.linkedin.com/in/ego-winasis-2178b2180&quot;</param>
+                    <param id="1" name="Tag">&quot;Linkedin&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="893384538423755">
+            <conditions>
+                <condition id="17" name="On tap object" sid="571798765433122" type="Touch">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="210207791524449" type="Browser">
+                    <param id="0" name="URL">&quot;https://porto-ego-vue.netlify.app/&quot;</param>
+                    <param id="1" name="Tag">&quot;portofolio&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

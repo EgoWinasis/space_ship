@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>menu_event</name>
+    <events>
+        <include>global</include>
+        <event-block sid="619146085119211">
+            <conditions>
+                <condition id="17" name="On tap object" sid="322111573938418" type="Touch">
+                    <param id="0" name="Object">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="979809708412665" type="System">
+                    <param id="0" name="Layout">about</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="366095239304185">
+            <conditions>
+                <condition id="17" name="On tap object" sid="307034780740073" type="Touch">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="784467704860035" type="System">
+                    <param id="0" name="Layout">game</param>
+                </action>
+                <action id="6" name="Stop" sid="153810806381202" type="Audio">
+                    <param id="0" name="Tag">&quot;lagu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

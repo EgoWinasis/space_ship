@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>splash_event</name>
+    <events>
+        <variable constant="0" name="loading" sid="264599519362848" static="0" type="number">0</variable>
+        <include>global</include>
+        <event-block sid="483437660842217">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="935790353788686" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="499038783262105" type="ProgressBar">
+                    <param id="0" name="Instance variable">loading</param>
+                    <param id="1" name="Value">floor(random(1,11))</param>
+                </action>
+                <action id="0" name="Set text" sid="378760682194817" type="Text3">
+                    <param id="0" name="Text">&quot;Loading...&quot;&amp;min(100, ProgressBar.loading)&amp;&quot;%&quot;</param>
+                </action>
+                <action id="3" name="Set progress" sid="573559043424273" type="ProgressBar">
+                    <param id="0" name="Value">ProgressBar.loading</param>
+                </action>
+                <action id="-9" name="Set value" sid="604268530996165" type="System">
+                    <param id="0" name="Variable">loading</param>
+                    <param id="1" name="Value">ProgressBar.loading</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="767759919903209">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="304607809420971" type="System">
+                    <param id="0" name="Variable">loading</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="877372659404721" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
