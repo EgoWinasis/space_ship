@@ -906,6 +906,7 @@
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable name="bullet_player" sid="333652962914923" type="number" />
+                    <instance-variable name="id" sid="367587084554916" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="31">
@@ -2260,6 +2261,7 @@
                 <instance-variable name="Locked" sid="855594810171262" type="number" />
                 <instance-variable name="index" sid="983062885669790" type="number" />
                 <instance-variable name="text" sid="545188213134570" type="string" />
+                <instance-variable name="id" sid="749154279092492" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="280313916631165">
@@ -2302,6 +2304,9 @@
         </object-type>
         <object-type name="Sprite14" sid="460508474501246">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ready" sid="227981454531260" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="416291765329788">
                     <behavior id="solid" />
@@ -2345,6 +2350,9 @@
         </object-type>
         <object-type name="enemyText" sid="191550169860598">
             <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="id_rocket" sid="146568285959775" type="number" />
+            </instance-variables>
             <container>
                 <type>Sprite13</type>
                 <type>enemyText</type>
@@ -2426,6 +2434,28 @@
                     <frame duration="1" hotspotX="0.500489" hotspotY="0.500545" original-source="E:\Download\ChatGPT Image 4 Apr 2025, 22.41.32.png" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Sprite19" sid="264940363445789">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294110463419576" speed="5">
+                    <frame duration="1" hotspotX="0.501149" hotspotY="0.5" original-source="C:\project\space_ship\Animations\Sprite2\Default\000.png">
+                        <collision-poly>
+                            <point x="0.149425" y="0.147727" />
+                            <point x="0.498851" y="0.00681818" />
+                            <point x="0.850575" y="0.147727" />
+                            <point x="1" y="0.5" />
+                            <point x="0.855172" y="0.856818" />
+                            <point x="0.498851" y="1" />
+                            <point x="0.147126" y="0.854545" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text7" sid="705460009392133">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>

@@ -22,7 +22,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="1">
+    <families-expanded root="0">
         <family expanded="0" name="Enemies" />
     </families-expanded>
     <folders-expanded>
@@ -32,9 +32,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/Game/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
-        <folder expanded="1" path="sound-folder/" />
-        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="0" path="music-folder/" />
         <folder expanded="1" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/logo/" />
         <folder expanded="1" path="animation-folder/Background/" />
@@ -78,5 +78,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Sprite18/" />
         <folder expanded="1" path="animation-folder/Sprite17/" />
         <folder expanded="1" path="animation-folder/intro/" />
+        <folder expanded="1" path="animation-folder/Sprite19/" />
     </folders-expanded>
 </c2uistate>

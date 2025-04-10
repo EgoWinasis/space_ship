@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>game_event</name>
     <events>
+        <variable constant="0" name="count" sid="365178382248324" static="0" type="number">0</variable>
+        <variable constant="0" name="ready" sid="545272533802218" static="0" type="number">1</variable>
+        <variable constant="0" name="id_target" sid="959388372265791" static="0" type="number">0</variable>
         <variable constant="0" name="win" sid="849501627906593" static="0" type="number">5</variable>
         <variable constant="0" name="speed" sid="686880877863029" static="0" type="number">50</variable>
         <variable constant="0" name="index_global" sid="910646765053471" static="0" type="number">0</variable>
@@ -11,21 +14,36 @@
         <variable constant="0" name="gameOver" sid="585258689468321" static="0" type="number">0</variable>
         <variable constant="0" name="spawnRocket" sid="603374008714347" static="0" type="number">0</variable>
         <variable constant="0" name="enemyid" sid="833942507994592" static="0" type="number">0</variable>
-        <variable constant="0" name="text_level" sid="758097075585826" static="0" type="text">apple,banana,computer,dream,nurbaeti</variable>
-        <variable constant="0" name="data_text" sid="164219273347818" static="0" type="text">apple,banana,computer,dream,energy,future,garden,happiness,island,journey,knowledge,lightning,mountain,nature,ocean,puzzle,question,rainbow,sunshine,treasure,universe,victory,waterfall,xylophone,zebra,adventure,balloon,courage,diamond,elephant,freedom,guitar,horizon,iceberg,jungle,kindness,laughter,melody,nostalgia,opportunity,paradise,quicksand,radiance,symphony,twilight,umbrella,volcano,whistle,xenon,yellow,breeze,chocolate,discovery,excitement,fireworks,glitter,hope,imagination,jellyfish,kite,lantern,mystery,north,optimism,picnic,quasar,river,snowflake,tranquility,universe,vortex,wanderlust,xenophobia,youth,zephyr,astonish,bliss,cascade,delight,eclipse,fantasy,gratitude,harmony,inspire,jubilant,kindred,luminescent,marvel,nurture,oasis,passion,quest,radiant,serendipity,thrive,uplift,vibrant,whimsical,yearn,zenith</variable>
+        <variable constant="0" name="text_level" sid="758097075585826" static="0" type="text">apple,banana,computer,dream,test</variable>
+        <variable constant="0" name="data_text" sid="164219273347818" static="0" type="text">apple,banana,computer,dream,energy,nurbaeti,future,garden,happiness,island,journey,knowledge,putri,lightning,mountain,nature,ocean,puzzle,question,rainbow,hakim,sunshine,treasure,universe,victory,waterfall,xylophone,zebra,adventure,balloon,courage,diamond,elephant,freedom,guitar,horizon,iceberg,jungle,kindness,laughter,melody,nostalgia,opportunity,paradise,quicksand,radiance,symphony,twilight,umbrella,volcano,whistle,xenon,yellow,breeze,chocolate,discovery,excitement,fireworks,glitter,hope,imagination,jellyfish,kite,lantern,mystery,north,optimism,picnic,quasar,river,snowflake,tranquility,universe,vortex,wanderlust,xenophobia,youth,zephyr,astonish,bliss,cascade,delight,eclipse,fantasy,gratitude,harmony,inspire,jubilant,kindred,luminescent,marvel,nurture,oasis,passion,quest,radiant,serendipity,thrive,uplift,vibrant,whimsical,yearn,zenith</variable>
         <variable constant="0" name="rudal" sid="186864435956679" static="0" type="number">1</variable>
         <event-block sid="686927035372592">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="791512576863538" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="-10" name="Set value" sid="765495107228400" type="Sprite14">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="694967114005116" type="System">
+                    <param id="0" name="Variable">count</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="758327655794067" type="level">
+                    <param id="0" name="Text">&quot;Level &quot;&amp;level</param>
+                </action>
+                <action id="0" name="Set text" sid="926785402966118" type="score">
+                    <param id="0" name="Text">&quot;Score : &quot;&amp;score</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="364016310351761">
                     <conditions>
                         <condition id="-10" name="For" sid="126744980044782" type="System">
                             <param id="0" name="Name">&quot;i&quot;</param>
                             <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">tokencount(text_level, &quot;,&quot;)</param>
+                            <param id="2" name="End index">win - 1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -41,13 +59,6 @@
                             <param id="1" name="Layer">0</param>
                             <param id="2" name="X">random(100,500)</param>
                             <param id="3" name="Y">-50</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="339655598844705" type="Sprite13">
-                            <param id="0" name="Instance variable">text</param>
-                            <param id="1" name="Value">tokenat(text_level, index_global, &quot;,&quot;)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="290506410764018" type="enemyText">
-                            <param id="0" name="Text">Sprite13.text</param>
                         </action>
                         <action id="-9" name="Set value" sid="154135146015235" type="System">
                             <param id="0" name="Variable">index_global</param>
@@ -174,6 +185,11 @@
         <event-block sid="435898773131452">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="199932914720288" type="Keyboard" />
+                <condition id="-14" name="Compare variable" sid="810171351943996" type="System">
+                    <param id="0" name="Variable">ready</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
             </conditions>
             <actions />
             <sub-events>
@@ -194,19 +210,53 @@
                                     <param id="0" name="Object">Sprite13</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="348368338638943" type="Sprite13">
-                                    <param id="0" name="Instance variable">Locked</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="248696009213108" type="System">
-                                    <param id="0" name="Variable">enemyid</param>
-                                    <param id="1" name="Value">Sprite13.UID</param>
-                                </action>
-                                <action id="0" name="Set text" sid="364172710963249" type="enemyText">
-                                    <param id="0" name="Text">right(EnemyText.Text, len(EnemyText.Text) - 1)</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="820180726118667">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="864671585535706" type="System">
+                                            <param id="0" name="Variable">enemyid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="348368338638943" type="Sprite13">
+                                            <param id="0" name="Instance variable">Locked</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="248696009213108" type="System">
+                                            <param id="0" name="Variable">enemyid</param>
+                                            <param id="1" name="Value">Sprite13.UID</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="364172710963249" type="enemyText">
+                                            <param id="0" name="Text">right(EnemyText.Text, len(EnemyText.Text) - 1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="527687000174847">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="221945531889365" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="336371783169094">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="859492077529522" type="System">
+                                                    <param id="0" name="Variable">enemyid</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">Sprite13.UID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="611770263263274" type="enemyText">
+                                                    <param id="0" name="Text">right(EnemyText.Text, len(EnemyText.Text) - 1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -253,23 +303,44 @@
                     <param id="0" name="Text to compare">&quot;&quot;</param>
                     <param id="1" name="Case sensitivity">0</param>
                 </condition>
-                <condition id="-14" name="Compare variable" sid="604821497072887" type="System">
-                    <param id="0" name="Variable">enemyid</param>
-                    <param id="1" name="Comparison">1</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="325520687588098" type="System">
-                    <param id="0" name="Variable">spawnRocket</param>
-                    <param id="1" name="Value">1</param>
+                <action id="-10" name="Set value" sid="931703108707315" type="Sprite13">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Value">Self.UID</param>
+                </action>
+                <action id="-9" name="Set value" sid="178433411529736" type="System">
+                    <param id="0" name="Variable">id_target</param>
+                    <param id="1" name="Value">Sprite13.id</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="844244178892574">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="664747317338095" type="System">
+                            <param id="0" name="Variable">enemyid</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="325520687588098" type="System">
+                            <param id="0" name="Variable">spawnRocket</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="707047563913564">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="956031485308331" type="EnemyBullet">
                     <param id="0" name="Object">Sprite13</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="668546203305866" type="Sprite13">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">EnemyBullet.id</param>
                 </condition>
             </conditions>
             <actions>
@@ -280,6 +351,10 @@
                 </action>
                 <action id="-9" name="Destroy" sid="739817112009800" type="Sprite13" />
                 <action id="-9" name="Destroy" sid="735444421924350" type="EnemyBullet" />
+                <action id="-10" name="Set value" sid="594741265154203" type="Sprite14">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="0" name="Play" sid="232631878792351" type="Audio">
                     <param id="0" name="Audio file">Explosion 2</param>
                     <param id="2" name="Loop">0</param>
@@ -297,6 +372,17 @@
                     <param id="0" name="Seconds">0.5</param>
                 </action>
                 <action id="-9" name="Destroy" sid="413345479985663" type="Explosion2" />
+                <action id="-9" name="Set value" sid="830391480520419" type="System">
+                    <param id="0" name="Variable">ready</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="825526210187750" type="System">
+                    <param id="0" name="Variable">count</param>
+                    <param id="1" name="Value">count + 1</param>
+                </action>
+                <action id="0" name="Set text" sid="836295932713259" type="Text7">
+                    <param id="0" name="Text">count  &amp;&quot; win: &quot;&amp; win</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="903516439793635">
@@ -306,26 +392,78 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
                 </condition>
+                <condition id="-14" name="Compare variable" sid="147604044667484" type="System">
+                    <param id="0" name="Variable">enemyid</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="564956189552923" type="System">
+                    <param id="0" name="Variable">id_target</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="-10" name="Set value" sid="200003444254557" type="Sprite14">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">0</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="525969970870100" type="Sprite14">
                     <param id="0" name="Object">EnemyBullet</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="Image point">0</param>
                 </action>
-                <action id="-22" name="Set angle toward position" sid="227420317188793" type="EnemyBullet">
-                    <param id="0" name="X">Sprite13.X</param>
-                    <param id="1" name="Y">Sprite13.Y</param>
+                <action id="-10" name="Set value" sid="169767043771415" type="EnemyBullet">
+                    <param id="0" name="Instance variable">id</param>
+                    <param id="1" name="Value">id_target</param>
                 </action>
-                <action id="-9" name="Set value" sid="887457900718544" type="System">
-                    <param id="0" name="Variable">spawnRocket</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="397377156164377" type="System">
-                    <param id="0" name="Variable">enemyid</param>
+                <action id="-9" name="Set value" sid="129619834904355" type="System">
+                    <param id="0" name="Variable">ready</param>
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="342237751601382">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="198026758456400" type="System">
+                            <param id="0" name="Variable">id_target</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="191782003567220">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="765006019060323" type="System">
+                                    <param id="0" name="Object">Sprite13</param>
+                                    <param id="1" name="Expression">Sprite13.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">id_target</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-22" name="Set angle toward position" sid="227420317188793" type="EnemyBullet">
+                                    <param id="0" name="X">Sprite13.X</param>
+                                    <param id="1" name="Y">Sprite13.Y</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="887457900718544" type="System">
+                                    <param id="0" name="Variable">spawnRocket</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="397377156164377" type="System">
+                                    <param id="0" name="Variable">enemyid</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="212376237785977" type="System">
+                                    <param id="0" name="Variable">id_target</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="861816706483621">
             <conditions>
@@ -336,18 +474,21 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="795760337124553" type="Sprite7">
-                    <param id="0" name="Visibility">1</param>
-                </action>
                 <action id="-24" name="Move to top" sid="619347751908147" type="Sprite7" />
-                <action id="-15" name="Set visible" sid="398920388447869" type="Text6">
-                    <param id="0" name="Visibility">1</param>
+                <action id="-3" name="Set position" sid="537337215007906" type="Sprite7">
+                    <param id="0" name="X">396</param>
+                    <param id="1" name="Y">400.175</param>
                 </action>
                 <action id="-24" name="Move to top" sid="932253990713395" type="Text6" />
-                <action id="-15" name="Set visible" sid="586349360191701" type="Sprite5">
-                    <param id="0" name="Visibility">1</param>
+                <action id="-3" name="Set position" sid="874091229383368" type="Text6">
+                    <param id="0" name="X">107</param>
+                    <param id="1" name="Y">299</param>
                 </action>
                 <action id="-24" name="Move to top" sid="301580443388063" type="Sprite5" />
+                <action id="-3" name="Set position" sid="157775860734286" type="Sprite5">
+                    <param id="0" name="X">377</param>
+                    <param id="1" name="Y">557</param>
+                </action>
                 <action id="-16" name="Wait" sid="102655473874769" type="System">
                     <param id="0" name="Seconds">3</param>
                 </action>
@@ -379,6 +520,30 @@
                 <action id="-9" name="Set value" sid="437434780708798" type="System">
                     <param id="0" name="Variable">score</param>
                     <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="729212676151630" type="System">
+                    <param id="0" name="Variable">index_global</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="779368660637393" type="System">
+                    <param id="0" name="Variable">enemyid</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="982910235136239" type="Sprite14">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="130567538809676" type="System">
+                    <param id="0" name="Variable">count</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="391678283261867" type="System">
+                    <param id="0" name="Variable">level</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="363705961863686" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">5</param>
                 </action>
             </actions>
         </event-block>
@@ -417,26 +582,87 @@
         <event-block sid="366049316109535">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="344019375210833" type="System">
-                    <param id="0" name="Variable">score</param>
+                    <param id="0" name="Variable">count</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">win</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="751005299198543" type="Sprite7">
-                    <param id="0" name="Visibility">1</param>
+                <action id="-3" name="Create object" sid="453979114369134" type="System">
+                    <param id="0" name="Object to create">Sprite7</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">403</param>
+                    <param id="3" name="Y"> 400</param>
                 </action>
-                <action id="-24" name="Move to top" sid="889733702428919" type="Sprite7" />
-                <action id="-15" name="Set visible" sid="732129268150482" type="Text6">
-                    <param id="0" name="Visibility">1</param>
+                <action id="0" name="Set text" sid="732129268150482" type="Text6">
+                    <param id="0" name="Text">&quot;Level &quot;&amp;level&amp;&quot; Win&quot;</param>
                 </action>
                 <action id="-24" name="Move to top" sid="576836481889643" type="Text6" />
-                <action id="-15" name="Set visible" sid="761274861799538" type="Sprite5">
-                    <param id="0" name="Visibility">1</param>
+                <action id="-3" name="Set position" sid="882264652808739" type="Text6">
+                    <param id="0" name="X">107</param>
+                    <param id="1" name="Y">299</param>
                 </action>
-                <action id="-24" name="Move to top" sid="989080979214497" type="Sprite5" />
-                <action id="-16" name="Wait" sid="310861955027410" type="System">
-                    <param id="0" name="Seconds">3</param>
+                <action id="-24" name="Move to top" sid="989080979214497" type="Sprite19" />
+                <action id="-3" name="Set position" sid="614218977400556" type="Sprite19">
+                    <param id="0" name="X">377</param>
+                    <param id="1" name="Y">557</param>
+                </action>
+                <action id="-9" name="Set value" sid="225298645616417" type="System">
+                    <param id="0" name="Variable">level</param>
+                    <param id="1" name="Value">level + 1</param>
+                </action>
+                <action id="-9" name="Set value" sid="969396658815605" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">win + 1</param>
+                </action>
+                <action id="-9" name="Set value" sid="553148459960748" type="System">
+                    <param id="0" name="Variable">count</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="909532371535479">
+            <conditions>
+                <condition id="-18" name="On created" sid="853132882043148" type="Sprite13" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="339655598844705" type="Sprite13">
+                    <param id="0" name="Instance variable">text</param>
+                    <param id="1" name="Value">tokenat(data_text, index_global, &quot;,&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="290506410764018" type="enemyText">
+                    <param id="0" name="Text">Sprite13.text</param>
+                </action>
+                <action id="-10" name="Set value" sid="898231108805981" type="enemyText">
+                    <param id="0" name="Instance variable">id_rocket</param>
+                    <param id="1" name="Value">Sprite13.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="528343152090805">
+            <conditions>
+                <condition id="17" name="On tap object" sid="776048884531398" type="Touch">
+                    <param id="0" name="Object">Sprite19</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="906433347931993" type="Sprite7" />
+                <action id="-9" name="Destroy" sid="993242927468399" type="Text6" />
+                <action id="-9" name="Destroy" sid="501077954146888" type="Sprite19" />
+                <action disabled="1" id="-9" name="Set value" sid="723230821595537" type="System">
+                    <param id="0" name="Variable">index_global</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="107925544616517" type="System">
+                    <param id="0" name="Variable">enemyid</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="595671606317661" type="Sprite14">
+                    <param id="0" name="Instance variable">ready</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="992349745101319" type="System">
+                    <param id="0" name="Layout">game</param>
                 </action>
             </actions>
         </event-block>

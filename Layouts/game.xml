@@ -84,7 +84,8 @@
                         <enemy>0</enemy>
                         <Locked>0</Locked>
                         <index>0</index>
-                        <text></text>
+                        <text>tsg</text>
+                        <id>0</id>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
@@ -145,6 +146,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <ready>0</ready>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -196,7 +200,7 @@
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial Narrow,-29,700,1</font>
+                        <font>Arial,-24,400,1</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -204,6 +208,9 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
+                    <instance-variables>
+                        <id_rocket>0</id_rocket>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -303,11 +310,12 @@
                     </properties>
                     <instance-variables>
                         <bullet_player>0</bullet_player>
+                        <id>0</id>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>400</speed>
+                                <speed>600</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -334,7 +342,7 @@
                 </instance>
                 <instance type="Sprite7" uid="9">
                     <properties>
-                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -342,8 +350,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>396.000030518</x>
-                        <y>400.174621582</y>
+                        <x>1297</x>
+                        <y>400</y>
                         <z>0</z>
                         <width>807.258117676</width>
                         <height>1150.317382813</height>
@@ -357,7 +365,7 @@
                 <instance type="Text6" uid="10">
                     <properties>
                         <text>GAME OVER</text>
-                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-visibility>Visible</initial-visibility>
                         <font>Nirmala UI,-96,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -369,7 +377,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>107</x>
+                        <x>1034</x>
                         <y>299</y>
                         <z>0</z>
                         <width>649</width>
@@ -383,7 +391,7 @@
                 </instance>
                 <instance type="Sprite5" uid="11">
                     <properties>
-                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -391,7 +399,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>377</x>
+                        <x>1310</x>
                         <y>557</y>
                         <z>0</z>
                         <width>149.504333496</width>
@@ -450,6 +458,55 @@
                         <z>0</z>
                         <width>216</width>
                         <height>42</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Sprite19" uid="16">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1306</x>
+                        <y>766</y>
+                        <z>0</z>
+                        <width>140.671768188</width>
+                        <height>142.28868103</height>
+                        <depth>0</depth>
+                        <hotspotX>0.501149416</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text7" uid="17">
+                    <properties>
+                        <text>0</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-29,700,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>358</x>
+                        <y>914</y>
+                        <z>0</z>
+                        <width>272</width>
+                        <height>122</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
